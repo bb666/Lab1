@@ -610,7 +610,7 @@ public class MyApp {
 									double time5 = System.currentTimeMillis();
 									System.out.println("this指令完成结束的时间为:"+time5/60+"秒");
 									double time6 = time5-time4;
-									System.out.println("指令执行的总时间为:"+time6/30+"秒");
+									System.out.println("this指令执行的总时间为:"+time6/30+"秒");
 								}
 								
 							}
