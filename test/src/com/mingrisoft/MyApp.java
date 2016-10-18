@@ -619,7 +619,7 @@ public class MyApp {
 					}
 				}
 				else
-					System.out.println("非法指令！");
+					System.out.println("非法指令！！！！！！！");
 				order=s.nextLine();//以字符串的形式读入命令
 		
 			}
