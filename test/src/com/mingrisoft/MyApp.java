@@ -1,13 +1,9 @@
 package com.mingrisoft;
-
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class MyApp {
-	ArrayList<String> Polynomial = new ArrayList<String>();//用于存储输入的表达式
+    final ArrayList<String> Polynomial = new ArrayList<String>();//用于存储输入的表达式
 	ArrayList<String> Operators = new ArrayList<String>();//用于存储分隔的相应加减号
-	
-
 	public boolean expression(String str){//对输入的字符串进行处理，若存在非法字符则返回false
     	String num = "";//作为中间字符串，将多项式以加号为分隔
     	int begin=0;
@@ -55,9 +51,6 @@ public class MyApp {
     	}
     	return true;
 	}
-	
-	
-	
 	public String simplify(String x,String value){//求值简化函数,返回赋值简化之后的表达式
 		ArrayList<String> temporary = new ArrayList<String>();//用于临时存储
 		for(int i=0;i<Polynomial.size();i++)
@@ -88,7 +81,6 @@ public class MyApp {
 			}
 			
 	        in=calculate(in);//调用表达式计算函数，计算乘法
-	     
 			temporary.add(in);
 		}
 		String out="";//计算后输出的字符串
@@ -118,8 +110,7 @@ public class MyApp {
 				{
 					out=out+Operators.get(m-1);
 					out=out+temporary.get(m);
-				}
-					
+				}	
 			}
 		}
 		if(number!=0)
@@ -137,9 +128,6 @@ public class MyApp {
 		
 		return out;
 	}
-	
-	
-	
     	public boolean derivative(String x){//求导函数
     		ArrayList<String> a = new ArrayList<String>();//用于临时存储
     		ArrayList<String> ao = new ArrayList<String>();//用于临时存储对应的前面的操作符
@@ -155,9 +143,7 @@ public class MyApp {
     				else
     			        ao.add(Operators.get(i-1));
     			}
-    		}
-    		
-    		
+    		}		
     		String out="";//计算后输出的字符串
     		double number=0;//计算后的数值部分
     		for(int m=0;m<a.size();m++)
@@ -185,8 +171,6 @@ public class MyApp {
     				{*/
     					out=out+ao.get(m);
     					out=out+a.get(m);
-    				
-    					
     			}
     		}
     		if(number!=0)
@@ -203,9 +187,7 @@ public class MyApp {
    		   }
     		System.out.println("求导后结果为："+out);
     		return true;
-    }
-    	
-    	
+    }	
     	public String QiuDao(String a,String x){//对字符串a进行求导处理
     		ArrayList<String> ai = new ArrayList<String>();//用于临时存储
     		double xi=1;//系数
@@ -359,9 +341,7 @@ public class MyApp {
 		}
 		return re;	
 	}
-	
-	
-	
+
 	public boolean isnumber(String a){//判断字符串a是否可以转换成数字
 		for(int i=0;i<a.length();i++){
 			if((a.charAt(i)>='0' && a.charAt(i)<='9') || a.charAt(i)=='.')
@@ -371,16 +351,12 @@ public class MyApp {
 		}
 		return true;
 	}
-	
-	
-	
 	public boolean ex(String a,String bian){//判断变量bian是否出现在表达式a中
 		if(a.indexOf(bian)>=0)
 			return true;
 		else
 			return false;		
 	}
-	
 	public static void main(String[] args){
 		MyApp a=new MyApp();
 		boolean b;
